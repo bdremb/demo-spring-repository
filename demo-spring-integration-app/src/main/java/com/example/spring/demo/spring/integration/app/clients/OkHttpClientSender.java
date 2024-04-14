@@ -62,7 +62,7 @@ public class OkHttpClientSender {
 
     public Resource downloadFile(String filename) {
         Request request = new Request.Builder()
-                .url(baseUrl + "/api/v1/file/download" + filename)
+                .url(baseUrl + "/api/v1/file/download/" + filename)
                 .header("Accept", "application/octet-stream")
                 .get()
                 .build();
@@ -103,7 +103,7 @@ public class OkHttpClientSender {
         RequestBody body = RequestBody.create(requestBody, JSON);
 
         Request httpRequest = new Request.Builder()
-                .url(baseUrl + "/api/v1/entity/")
+                .url(baseUrl + "/api/v1/entity")
                 .post(body)
                 .build();
         return processResponses(httpRequest, new TypeReference<>() {
