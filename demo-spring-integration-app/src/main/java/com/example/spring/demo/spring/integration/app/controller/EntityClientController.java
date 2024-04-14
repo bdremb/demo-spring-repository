@@ -1,7 +1,7 @@
 package com.example.spring.demo.spring.integration.app.controller;
 
 
-import com.example.spring.demo.spring.integration.app.clients.OkHttpClientSender;
+import com.example.spring.demo.spring.integration.app.clients.RestTemplateClient;
 import com.example.spring.demo.spring.integration.app.model.EntityModel;
 import com.example.spring.demo.spring.integration.app.model.UpsertEntityRequest;
 import lombok.RequiredArgsConstructor;
@@ -24,7 +24,9 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class EntityClientController {
 
-    private final OkHttpClientSender clientSender;
+//    private final OkHttpClientSender clientSender;
+
+    private final RestTemplateClient clientSender;
 
     @GetMapping
     public ResponseEntity<List<EntityModel>> entityList() {
