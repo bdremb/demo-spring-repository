@@ -81,10 +81,10 @@ public class RestTemplateClient {
     public EntityModel createEntity(UpsertEntityRequest request) {
         HttpEntity<UpsertEntityRequest> requestHttpEntity = new HttpEntity<>(request);
         ResponseEntity<EntityModel> response = restTemplate.exchange(
-          baseUrl + "/api/v1/entity",
-          HttpMethod.POST,
-          requestHttpEntity,
-          EntityModel.class
+                baseUrl + "/api/v1/entity",
+                HttpMethod.POST,
+                requestHttpEntity,
+                EntityModel.class
         );
         return response.getBody();
     }
@@ -92,11 +92,11 @@ public class RestTemplateClient {
     public EntityModel updateEntity(UUID id, UpsertEntityRequest request) {
         HttpEntity<UpsertEntityRequest> requestHttpEntity = new HttpEntity<>(request);
         ResponseEntity<EntityModel> response = restTemplate.exchange(
-          baseUrl + "/api/v1/entity/{id}",
-          HttpMethod.PUT,
-          requestHttpEntity,
-          EntityModel.class,
-          id
+                baseUrl + "/api/v1/entity/{id}",
+                HttpMethod.PUT,
+                requestHttpEntity,
+                EntityModel.class,
+                id
         );
         return response.getBody();
     }

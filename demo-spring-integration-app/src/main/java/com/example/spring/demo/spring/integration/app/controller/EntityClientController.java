@@ -1,7 +1,7 @@
 package com.example.spring.demo.spring.integration.app.controller;
 
 
-import com.example.spring.demo.spring.integration.app.clients.WebClientSender;
+import com.example.spring.demo.spring.integration.app.clients.OpenFeignClient;
 import com.example.spring.demo.spring.integration.app.model.EntityModel;
 import com.example.spring.demo.spring.integration.app.model.UpsertEntityRequest;
 import lombok.RequiredArgsConstructor;
@@ -28,7 +28,9 @@ public class EntityClientController {
 
 //    private final RestTemplateClient clientSender;
 
-    private final WebClientSender clientSender;
+//    private final WebClientSender clientSender;
+
+    private final OpenFeignClient clientSender;
 
     @GetMapping
     public ResponseEntity<List<EntityModel>> entityList() {
