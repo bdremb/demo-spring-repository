@@ -25,13 +25,14 @@ public class AppCacheProperties {
     }
 
     public interface CacheNames {
-
         String DATABASE_ENTITIES = "databaseEntities";
         String DATABASE_ENTITY_BY_NAME = "databaseEntityByName";
+        String DATABASE_ENTITY_BY_ID = "databaseEntityById";
     }
 
     public enum CacheType {
-        IN_MEMORY
+        IN_MEMORY,
+        REDIS
     }
 
 }

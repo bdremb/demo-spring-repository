@@ -1,18 +1,29 @@
 app:
+  redis:
+    enable: true
   integration:
     base-url: http://localhost:8082
   cache:
-    cache-type: in_memory
+    cache-type: redis
     cache-names:
       - databaseEntities
       - databaseEntityByName
+      - databaseEntityById
     caches:
       databaseEntities:
-        expiry: 5s
+        expiry: 15s
       databaseEntityByName:
-        expiry: 10s
+        expiry: 15s
+      databaseEntityById:
+        expiry: 1m
+
 
 spring:
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
   jpa:
     generate-ddl: true
   datasource:

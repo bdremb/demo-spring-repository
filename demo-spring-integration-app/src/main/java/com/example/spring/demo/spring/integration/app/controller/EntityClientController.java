@@ -41,6 +41,11 @@ public class EntityClientController {
         return ResponseEntity.ok(service.findAll().stream().map(EntityModel::from).toList());
     }
 
+    @GetMapping("/by-id/{id}")
+    public ResponseEntity<EntityModel> getById(@PathVariable UUID id) {
+        return ResponseEntity.ok(EntityModel.from(service.findById(id)));
+    }
+
     @GetMapping("/{name}")
     public ResponseEntity<EntityModel> entityByName(@PathVariable String name) {
         return ResponseEntity.ok(EntityModel.from(service.findByName(name)));
@@ -56,7 +61,7 @@ public class EntityClientController {
     @PutMapping("/{id}")
     public ResponseEntity<EntityModel> updateEntity(@PathVariable UUID id, @RequestBody UpsertEntityRequest request) {
         var updatedEntity = clientSender.updateEntity(id, request);
-        var updatedDbEntity = service.update(id,DatabaseEntity.from(updatedEntity));
+        var updatedDbEntity = service.update(id, DatabaseEntity.from(updatedEntity));
         return ResponseEntity.ok(EntityModel.from(updatedDbEntity));
     }
 
