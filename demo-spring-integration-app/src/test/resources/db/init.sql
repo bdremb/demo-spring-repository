@@ -1,0 +1,3 @@
+INSERT INTO entities(id, name, date) VALUES ('adefec47-dee5-44a6-be03-5fad3052eeb4', 'testName1', '2100-01-01 00:00:00.123432 +00:00');
+INSERT INTO entities(id, name, date) VALUES ('adefec47-dee5-44a6-be03-5fad3052eeb5', 'testName2', '2100-01-01 00:00:00.123432 +00:00');
+INSERT INTO entities(id, name, date) VALUES ('adefec47-dee5-44a6-be03-5fad3052eeb6', 'testName3', '2100-01-01 00:00:00.123432 +00:00');

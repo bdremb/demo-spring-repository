@@ -1,14 +1,7 @@
 spring:
-  data:
-    redis:
-      host: localhost
-      port: 6379
   jpa:
     generate-ddl: true
   datasource:
-    url: jdbc:postgresql://localhost:5437/app_db
-    username: postgres
-    password: postgres
     hikari:
       schema: app_schema
       connection-init-sql: CREATE SCHEMA IF NOT EXISTS app_schema
