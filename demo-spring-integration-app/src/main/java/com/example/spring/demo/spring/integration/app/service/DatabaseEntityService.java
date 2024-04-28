@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.cache.annotation.Caching;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.stereotype.Service;
@@ -57,11 +58,11 @@ public class DatabaseEntityService {
         return repository.save(forSave);
     }
 
-    //    @Caching(evict = {
-//            @CacheEvict(value = DATABASE_ENTITIES, allEntries = true),
-//            @CacheEvict(value = DATABASE_ENTITY_BY_NAME, allEntries = true)
-//    })
-    @CacheEvict(cacheNames = DATABASE_ENTITY_BY_ID, key = "#id", beforeInvocation = true)
+    @Caching(evict = {
+            @CacheEvict(value = DATABASE_ENTITIES, allEntries = true),
+            @CacheEvict(value = DATABASE_ENTITY_BY_NAME, allEntries = true)
+    })
+//    @CacheEvict(cacheNames = DATABASE_ENTITY_BY_ID, key = "#id", beforeInvocation = true)
     public DatabaseEntity update(UUID id, DatabaseEntity entity) {
         DatabaseEntity forUpdate = findById(id);
         forUpdate.setName(entity.getName());
@@ -70,11 +71,11 @@ public class DatabaseEntityService {
         return repository.save(forUpdate);
     }
 
-//    @Caching(evict = {
-//            @CacheEvict(value = DATABASE_ENTITIES, allEntries = true),
-//            @CacheEvict(value = DATABASE_ENTITY_BY_NAME, allEntries = true)
-//    })
-    @CacheEvict(cacheNames = DATABASE_ENTITY_BY_ID, key = "#id", beforeInvocation = true)
+    @Caching(evict = {
+            @CacheEvict(value = DATABASE_ENTITIES, allEntries = true),
+            @CacheEvict(value = DATABASE_ENTITY_BY_NAME, allEntries = true)
+    })
+//    @CacheEvict(cacheNames = DATABASE_ENTITY_BY_ID, key = "#id", beforeInvocation = true)
     public void deleteById(UUID id) {
         repository.deleteById(id);
     }
