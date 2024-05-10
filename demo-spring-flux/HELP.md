@@ -1,23 +1,18 @@
-# Getting Started
+# Mongo db
 
-### Reference Documentation
+## Using commands docker and Mongo DB in lesson
 
-For further reference, please consider the following sections:
+###  cd docker
+###  docker container ls
+###  docker exec -it fc584da95535 mongosh --username root --password root --authenticationDatabase admin
 
-* [Official Gradle documentation](https://docs.gradle.org)
-* [Spring Boot Gradle Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/3.1.11/gradle-plugin/reference/html/)
-* [Create an OCI image](https://docs.spring.io/spring-boot/docs/3.1.11/gradle-plugin/reference/html/#build-image)
-* [Spring Reactive Web](https://docs.spring.io/spring-boot/docs/3.1.11/reference/htmlsingle/index.html#web.reactive)
-
-### Guides
-
-The following guides illustrate how to use some features concretely:
-
-* [Building a Reactive RESTful Web Service](https://spring.io/guides/gs/reactive-rest-service/)
-
-### Additional Links
-
-These additional references should also help you:
-
-* [Gradle Build Scans – insights for your project's build](https://scans.gradle.com#gradle)
+## inside mongo
+###
+### > use test_db
+### > db.createCollection("usr")
+### > db.usr.insert({name: "John", age: 25})
+### > db.usr.find({age: {$gt: 25}})
+### > db.usr.update({name: "Paul"}, {$set: {age: 25}})
+### > db.usr.find({name: "Paul"})
+### >  db.usr.deleteOne({name: "John"})
 

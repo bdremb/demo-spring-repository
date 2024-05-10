@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  mongodb:
+    image: mongo:6.0.8
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+
+
+#  cd docker
+#  docker container ls
+#  docker exec -it fc584da95535 mongosh --username root --password root --authenticationDatabase admin
+
+#inside mongo
+#
+#>use test_db
+#>db.createCollection("usr")
+#>db.usr.insert({name: "John", age: 25})
+#
