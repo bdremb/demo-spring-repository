@@ -1,6 +1,16 @@
 spring:
   application:
     name: demo-spring-basic-auth example
+  jpa:
+    generate-ddl: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/user_db
+    username: postgres
+    password: postgres
+    hikari:
+      schema: user_schema
+      connection-init-sql: CREATE SCHEMA IF NOT EXISTS user_schema
+      connection-timeout: 10000
 app:
   security:
-    type: inMemory
+    type: db
