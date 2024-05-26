@@ -34,7 +34,8 @@ public class ItemService {
     }
 
     public Mono<Item> update(String id, Item item) {
-        return findById(id).flatMap(itemForUpdate -> {
+        return findById(id)
+                .flatMap(itemForUpdate -> {
             if (StringUtils.hasText(item.getName())) {
                 itemForUpdate.setName(item.getName());
             }

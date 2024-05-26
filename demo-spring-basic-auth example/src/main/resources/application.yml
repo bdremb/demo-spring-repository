@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: demo-spring-basic-auth example
+app:
+  security:
+    type: inMemory
