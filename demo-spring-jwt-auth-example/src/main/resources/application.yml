@@ -20,4 +20,4 @@ app:
   jwt:
     secret: "someSecretKey"
     tokenExpiration: 3m
-    refreshTokenExpiration: 30m
+    refreshTokenExpiration: 10s
