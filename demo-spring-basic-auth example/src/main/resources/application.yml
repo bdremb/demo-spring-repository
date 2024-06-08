@@ -13,4 +13,4 @@ spring:
       connection-timeout: 10000
 app:
   security:
-    type: db
+    type: inMemory
