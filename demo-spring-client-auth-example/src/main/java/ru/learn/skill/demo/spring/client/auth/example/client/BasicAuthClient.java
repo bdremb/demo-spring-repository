@@ -1,4 +1,4 @@
-package ru.learn.skill.demo.spring.client.auth.example.clien;
+package ru.learn.skill.demo.spring.client.auth.example.client;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;

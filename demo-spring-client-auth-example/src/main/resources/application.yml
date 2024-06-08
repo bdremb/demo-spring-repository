@@ -5,3 +5,7 @@ server:
 spring:
   application:
     name: demo-spring-client-auth-example
+
+app:
+  clientId: testUser
+  clientSecret: 12345
