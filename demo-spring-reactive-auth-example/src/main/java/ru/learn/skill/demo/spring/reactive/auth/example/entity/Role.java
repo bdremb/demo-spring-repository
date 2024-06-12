@@ -18,7 +18,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 @Data
 @Entity
-@Table("authorities")
+@Table(name = "authorities")
 public class Role {
 
     @Id
